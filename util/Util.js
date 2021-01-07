@@ -7,7 +7,7 @@ const botInvRegex = /(https?:\/\/)?(www\.|canary\.|ptb\.)?discord(app)?\.com\/(a
 const fetch = require('node-fetch');
 
 module.exports = class Util {
-static shorten(text, maxLen = 2000) {
+	static shorten(text, maxLen = 2000) {
 		return text.length > maxLen ? `${text.substr(0, maxLen - 3)}...` : text;
 	}
 	static formatNumber(number, minimumFractionDigits = 0) {
@@ -16,6 +16,9 @@ static shorten(text, maxLen = 2000) {
 			maximumFractionDigits: 2
 		});
 	}
+	static trimValue(text, maxLen = 1000) {
+    		return text.length > maxLen ? `${text.substr(0, maxLen - 3)}...` : text;
+  	}
 	static trimArray(arr, maxLen = 10) {
 		if (arr.length > maxLen) {
 			const len = arr.length - maxLen;
@@ -38,13 +41,41 @@ static shorten(text, maxLen = 2000) {
 		throw new TypeError(`${mode} base64 mode is not supported`);
 	}
 
-  static fetchData(url = '') {
-    return fetch(url).then(res => res.json());
-  }
-  static txfetchData(url = ''){
-    return fetch(url).then(res=>res.text());
-  }
-  static async reactIfAble(msg, user, emoji, fallbackEmoji) {
+  	static fetchData(url = '') {
+    		return fetch(url).then(res => res.json());
+  	}
+  	static txfetchData(url = ''){
+    		return fetch(url).then(res=>res.text());
+  	}
+	static streamToArray(stream) {
+    		if (!stream.readable) return Promise.resolve([]);
+    		return new Promise((resolve, reject) => {
+      			const array = [];
+      			function onData(data) {
+        			array.push(data);
+      			}
+      			function onEnd(error) {
+        			if (error) reject(error);
+        			else resolve(array);
+        			cleanup();
+      			}
+      			function onClose() {
+        		resolve(array);
+        		cleanup();
+      			}
+      			function cleanup() {
+        			stream.removeListener('data', onData);
+       				stream.removeListener('end', onEnd);
+        			stream.removeListener('error', onEnd);
+        			stream.removeListener('close', onClose);
+      			}
+      			stream.on('data', onData);
+      			stream.on('end', onEnd);
+      			stream.on('error', onEnd);
+      			stream.on('close', onClose);
+    		});
+  	}
+ 	static async reactIfAble(msg, user, emoji, fallbackEmoji) {
 		const dm = !msg.guild;
 		if (fallbackEmoji && (!dm && !msg.channel.permissionsFor(user).has('USE_EXTERNAL_EMOJIS'))) {
 			emoji = fallbackEmoji;
