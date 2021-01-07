@@ -21,12 +21,12 @@ class Client extends AkairoClient {
     this.commandHandler = new CommandHandler(this, {
       directory: './commands/',
       prefix: process.env.BOT_PREFIX,
-      allowMention: true,
-      handleEdits: true,
+      allowMention: config.allowMention,
+      handleEdits: config.handleEdits,
       commandUtil: true,
       commandUtilLifetime: 60000,
       fetchMembers: true,
-      defaultCooldown: 1000
+      defaultCooldown: config.cooldown
     });
     this.logger = winston.createLogger({
       transports: [new winston.transports.Console()],
@@ -46,7 +46,6 @@ class Client extends AkairoClient {
   }
   setup() {
     this.commandHandler.loadAll();
-    this.commandHandler.resolver.addType('code', CodeType);
   }
 
 }
