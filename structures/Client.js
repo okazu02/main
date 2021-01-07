@@ -9,6 +9,9 @@ const { AkairoClient, CommandHandler, InhibitorHandler, ListenerHandler } = requ
 const { stripIndents } = require('common-tags');
 const winston = require('winston');
 const path = require('path');
+module.exports.config = 'clientConfig.js';
+const config = require(join(__dirname, '../structures/', module.exports.config));
+
 
 class Client extends AkairoClient {
   constructor() {
