@@ -21,13 +21,7 @@ const { stripIndents } = require('common-tags');
 const Canvas = require('canvas');
 const fetch = require('node-fetch');
 
-
 client.setup();
-
-client.on('ready', async () => {
-	client.logger.info(`[READY][${client.user.tag}]でログイン中`)
-});
-
 
 client.on('disconnect', event => {
 	client.logger.error(`[DISCONNECT] Event code:${event.code}.`);
