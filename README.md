@@ -1,5 +1,5 @@
 [![Run on Repl.it](https://repl.it/badge/github/MakeYourOwnDiscordBot/main)](https://repl.it/github/MakeYourOwnDiscordBot/main)
-# なんのためのもの？
+# なんのためのもの？※制作中です。
 自分のdiscordサーバー用のdiscord botが欲しい！という人向けのものです。<br>
 まだ制作途中ですが、いる機能いらない機能を選択できるセルフホスティング用botを目指しています。<br>
 無料で常時起動させ続けることもできるのでやってみてくださいね！<br>
