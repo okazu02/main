@@ -1,10 +1,10 @@
 require('dotenv').config();
-const { BOT_TOKEN, BOT_PREFIX, OWNERS } = process.env;
+const { BOT_TOKEN, BOT_PREFIX, OWNERS_ID } = process.env;
 const Client = require('./structures/Client');
 const client = new Client({
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 	prefix: BOT_PREFIX,
-	ownerID: OWNERS.split(','),
+	ownerID: OWNERS_ID.split(','),
 	disableEveryone: true,
 });
 const { Readable } = require('stream');
