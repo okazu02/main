@@ -4,7 +4,7 @@ const { stripIndents } = require('common-tags');
 module.exports = class PingCommand extends Command {
 	constructor() {
 		super('ping', {
-      name:"ping",
+      			id:"ping",
 			aliases: ['ping', 'pong', 'ping-pong'],
 			category: 'default',
 			description: 'botのping値を表示\npongの"o"の数が多いほど処理に時間がかかっている'
