@@ -4,7 +4,7 @@ const Client = require('./structures/Client');
 const client = new Client({
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 	prefix: BOT_PREFIX,
-	ownerID: OWNERS_ID.split(','),
+	ownerID: OWNERS_ID.split(',') || OWNERS_ID,
 	disableEveryone: true,
 });
 const { Readable } = require('stream');
