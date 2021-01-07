@@ -1,6 +1,5 @@
 const crypto = require('crypto');
 const Entities = require('html-entities').AllHtmlEntities;
-const entities = new Entities();
 const { stripIndents } = require('common-tags');
 const inviteRegex = /(https?:\/\/)?(www\.|canary\.|ptb\.)?discord(\.gg|(app)?\.com\/invite|\.me)\/([^ ]+)\/?/gi;
 const botInvRegex = /(https?:\/\/)?(www\.|canary\.|ptb\.)?discord(app)?\.com\/(api\/)?oauth2\/authorize\?([^ ]+)\/?/gi; 
