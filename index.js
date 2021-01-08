@@ -4,7 +4,6 @@ const Client = require('./structures/Client');
 const client = new Client({
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 	prefix: BOT_PREFIX,
-	ownerID: OWNERS_ID.split(',') || OWNERS_ID,
 	disableEveryone: true,
 });
 const { Readable } = require('stream');
@@ -17,6 +16,7 @@ const canvaUtil = require('./util/Canvas')
 const Database = require("@replit/database")
 const db = new Database()
 const discord = require('discord.js')
+client.commands = new discord.Collection();
 const { stripIndents } = require('common-tags');
 const Canvas = require('canvas');
 const fetch = require('node-fetch');
@@ -33,9 +33,9 @@ client.on('error', err => client.logger.error(err));
 client.on('warn', warn => client.logger.warn(warn));
 
 client.commandHandler.on('error', (err, msg, command) => {
-	client.logger.error(`[COMMAND${command ? `:${command.name}` : ''}]\n${err.stack}`);
+	client.logger.error(`[COMMAND${command ? `:${command.id}` : ''}]\n${err.stack}`);
 	msg.reply(stripIndents`
-		コマンドを実行中にエラーが発生しました: \`${err.message}\`\n${command ? "コマンド名:\`"+command.name+"\`" : ''}`).catch(() => null);
+		コマンドを実行中にエラーが発生しました: \`${err.message}\`\n${command ? "コマンド名:\`"+command.id+"\`" : ''}`).catch(() => null);
 });
 
 client.login(BOT_TOKEN);
