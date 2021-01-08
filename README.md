@@ -18,7 +18,7 @@
 </details>
 
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
-`.env`ファイルを開き、以下のものを書き込む<br>
+`.env`ファイルを開き、以下のものを書き込む。**後ろの説明書きは削除する**。<br>
 - [x] `bot token`(取得方法は[このサイト](https://dot-blog.jp/news/discord-bot-token/)を参照)<br>
 - [x] `bot prefix`(コマンドの前につけるもの)<br>
 - [x] `owner id`(botの全権限を持つ人のID)(2人以上の場合は`,`で区切る)<br>
