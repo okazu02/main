@@ -12,10 +12,10 @@
 [![Run on Repl.it](https://repl.it/badge/github/MakeYourOwnDiscordBot/main)](https://repl.it/github/MakeYourOwnDiscordBot/main)←ここをクリック。repl.itの画面に切り替わり、設定が始まる。**画面が再読み込みされるまで待機**
 ## 3.botの起動準備をする
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
-`.env`と書かれてファイルを開き、以下のものを書き込む
-・bot token
-・bot prefix(コマンドの前につけるもの)
-・owner id(botの全権限を持つ人のID)(2人以上の場合は`,`で区切る)
+`.env`と書かれてファイルを開き、以下のものを書き込む<br>
+・bot token<br>
+・bot prefix(コマンドの前につけるもの)<br>
+・owner id(botの全権限を持つ人のID)(2人以上の場合は`,`で区切る)<br>
 ↓例
 ```
 BOT_TOKEN = NSanjainwaoBotTOkenExamplean4122njasjn
