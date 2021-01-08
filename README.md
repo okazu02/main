@@ -11,6 +11,11 @@
 ## 2.コードを用意した環境に移す
 [![Run on Repl.it](https://repl.it/badge/github/MakeYourOwnDiscordBot/main)](https://repl.it/github/MakeYourOwnDiscordBot/main)←ここをクリック。repl.itの画面に切り替わり、設定が始まる。**画面が再読み込みされるまで待機**
 ## 3.botの起動準備をする
+<details><summary>チェックボックスの意味(クリックで展開)</summary>
+  
+- [ ] これは任意
+- [ ] 書き込まなくてはいけない項目
+</details>
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
 `.env`ファイルを開き、以下のものを書き込む<br>
 - [x] `bot token`(取得方法は[このサイト](https://dot-blog.jp/news/discord-bot-token/)を参照)<br>
