@@ -22,5 +22,7 @@ BOT_TOKEN = NSanjainwaoBotTOkenExamplean4122njasjn
 BOT_PREFIX = !
 OWNERS_ID = 10356137471,75364526747247
 ```
-次にオプションを設定する`structures`フォルダの中にある`clientConfig.js`ファイルを開く
-
+次にオプションを設定する<br>`structures`フォルダの中にある`clientConfig.js`ファイルを開く
+- [ ] cooldown コマンドを一度使ってからもう一度使える用になるまでの時間を設定する。単位はミリ秒。デフォルトは3000ミリ秒(3秒)
+- [ ] allowMention　`true`の場合、先ほど設定した`BOT_PREFIX`の代わりに、botをメンションしてもコマンドを使えるようにする。(つまり`@bot help`でも`!help`でも動く)  メンションコマンドを使えないようにする場合は`false`に設定
+- [ ] handleEdits　`true`の場合、一度間違えて打ったコマンドを編集して正しいコマンドにした場合にbotが反応する。反応しないようにする場合は`false`に設定。
