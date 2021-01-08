@@ -16,6 +16,8 @@ const config = require(path.join(__dirname, '../structures/', module.exports.con
 class Client extends AkairoClient {
   constructor() {
     super({
+      ownerID:process.env.OWNERS_ID.split(","),
+    },{
         disableMentions: 'everyone'
       });
     this.commandHandler = new CommandHandler(this, {
