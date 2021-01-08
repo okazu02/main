@@ -22,3 +22,5 @@ BOT_TOKEN = NSanjainwaoBotTOkenExamplean4122njasjn
 BOT_PREFIX = !
 OWNERS_ID = 10356137471,75364526747247
 ```
+次にオプションを設定する`structures`フォルダの中にある`clientConfig.js`ファイルを開く
+
