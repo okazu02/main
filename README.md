@@ -16,6 +16,7 @@
 - [ ] これは任意
 - [x] これは書き込まなくてはいけない項目
 </details>
+
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
 `.env`ファイルを開き、以下のものを書き込む<br>
 - [x] `bot token`(取得方法は[このサイト](https://dot-blog.jp/news/discord-bot-token/)を参照)<br>
