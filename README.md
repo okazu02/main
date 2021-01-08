@@ -13,9 +13,9 @@
 ## 3.botの起動準備をする
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
 `.env`と書かれてファイルを開き、以下のものを書き込む<br>
-・bot token<br>
-・bot prefix(コマンドの前につけるもの)<br>
-・owner id(botの全権限を持つ人のID)(2人以上の場合は`,`で区切る)<br>
+- [x] bot token<br>
+- [x] bot prefix(コマンドの前につけるもの)<br>
+- [x] owner id(botの全権限を持つ人のID)(2人以上の場合は`,`で区切る)<br>
 ↓例
 ```
 BOT_TOKEN = NSanjainwaoBotTOkenExamplean4122njasjn
