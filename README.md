@@ -1,5 +1,5 @@
 [![Run on Repl.it](https://repl.it/badge/github/MakeYourOwnDiscordBot/main)](https://repl.it/github/MakeYourOwnDiscordBot/main)
-[![version](https://img.shields.io/badge/version-1.0-brightgreen)]
+[![version](https://img.shields.io/badge/version-1.0-brightgreen)](https://github.com/MakeYourOwnDiscordBot/main)
 # なんのためのもの？
 自分のdiscordサーバー用のdiscord botが欲しい！という人向けのものです。<br>
 まだ制作途中ですが、機能を選択できるセルフホスティング用botを目指しています。<br>
