@@ -33,7 +33,7 @@ BOT_PREFIX = !
 ↓例
 ```javascript
 module.exports= {
-name:"bot"
+name:"bot",
 owners:["475304856018616340","489690595372171275"]
 }
 ```
