@@ -33,7 +33,9 @@ BOT_PREFIX = !
 画面上部中央にある緑のスタートボタンを押下。<br>必要なパッケージのインストールが自動で始まるので待機。<br>右下(画面サイズや設定によって場所は変わる。)にある黒い画面に`[READY][botの名前]でログイン中`と表示されたら、botが使用できる。<br><br>
 <img src="https://github.com/MakeYourOwnDiscordBot/assets/blob/main/IMAGES/console-screen.png" width="320px">
 
-<br><br>`!ping`と送信してみよう(`!`の部分は先ほど設定した`BOT_PREFIX`に置き換え)
+<br><br>`!ping`と送信してみよう(`!`の部分は先ほど設定した`BOT_PREFIX`に置き換え)<br><br>
+<img src="https://github.com/MakeYourOwnDiscordBot/assets/blob/main/IMAGES/ping-command.png" width="320px">
+
 ## 5.常時起動させる。
 このままでは、サイトを閉じたときにbotが止まってしまうので常時起動させる。
 [このサイト](https://disbot.info/bot-make/repl-djs-1/#toc8)に常時起動させる方法が載っている。(リンク先の場所から読めば大丈夫)
