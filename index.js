@@ -1,41 +1,24 @@
+const http = require('http');
+http
+	.createServer(function(req, res) {
+		res.write('uptimer用');
+		res.end();
+	})
+	.listen(8080);
 require('dotenv').config();
-const { BOT_TOKEN, BOT_PREFIX, OWNERS_ID } = process.env;
-const Client = require('./structures/Client');
-const client = new Client({
-	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
-	prefix: BOT_PREFIX,
-	disableEveryone: true,
-});
-const { Readable } = require('stream');
-const jsondiffpatch = require('jsondiffpatch');
-const cron = require('node-cron')
-const { humanizer } = require('humanize-duration');
-const nodesuperfetch = require('node-superfetch');
-const Util = require('./util/Util');
-const canvaUtil = require('./util/Canvas')
-const Database = require("@replit/database")
-const db = new Database()
-const discord = require('discord.js')
-client.commands = new discord.Collection();
-const { stripIndents } = require('common-tags');
-const Canvas = require('canvas');
-const fetch = require('node-fetch');
-
-client.setup();
-
-client.on('disconnect', event => {
-	client.logger.error(`[DISCONNECT] Event code:${event.code}.`);
-	process.exit(0);
+const config = require('./Config/config')
+const leeks = require('leeks.js');
+const Logger = require('leekslazylogger');
+const log = new Logger({
+	name: config.name,
+	
 });
 
-client.on('error', err => client.logger.error(err));
+const { Client ,Collection } = require('discord.js');
+const client = new Client({ partials: ['GUILD_MEMBER','MESSAGE', 'CHANNEL', 'REACTION'] });
+client.commands = new Collection();
+client.prefix = process.env.BOT_PREFIX;
 
-client.on('warn', warn => client.logger.warn(warn));
+require("./extensionsLoader/findExtensionsReady")(client);
 
-client.commandHandler.on('error', (err, msg, command) => {
-	client.logger.error(`[COMMAND${command ? `:${command.id}` : ''}]\n${err.stack}`);
-	msg.reply(stripIndents`
-		コマンドを実行中にエラーが発生しました: \`${err.message}\`\n${command ? "コマンド名:\`"+command.id+"\`" : ''}`).catch(() => null);
-});
-
-client.login(BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
