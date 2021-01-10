@@ -14,8 +14,8 @@
 ## 3.botの起動準備をする
 <details><summary>チェックボックスの意味(クリックで展開)</summary>
   
-- [ ] これは任意
-- [x] これは書き込まなくてはいけない項目
+- [ ] 任意
+- [x] 必須
 </details>
 
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
@@ -29,7 +29,7 @@ BOT_PREFIX = !
 ```
 次にオーナーを設定する<br>`Config`フォルダの中にある`config.js`ファイルを開く
 - [ ] `name` botの名前(実行時のログに表示されるだけで、discord側で表示されることはないのでそのままでも問題ない。)
-- [ ] `owners`　botのオーナーのdiscord ID(ここにIDがのっている人はすべての操作を行うことができるので注意!!!!)
+- [x] `owners`　botのオーナーのdiscord ID(ここにIDがのっている人はすべての操作を行うことができるので注意!!!!)
 画面上部中央にある緑のスタートボタンを押下。<br>必要なパッケージのインストールが自動で始まるので待機。<br>右下(画面サイズや設定によって場所は変わる。)にある黒い画面に`[READY][botの名前]でログイン中`と表示されたら、botが使用できる。<br>
 ![起動画面](https://github.com/MakeYourOwnDiscordBot/assets/blob/main/main/IMAGES/console-screen.png)
 <br><br>`!ping`と送信してみよう(`!`の部分は先ほど設定した`BOT_PREFIX`に置き換え)
