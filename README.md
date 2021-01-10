@@ -21,6 +21,10 @@
 repl.itでコードの読み込みが完了したら、設定に移る。<br>
 `.env`ファイルを開き、以下のものを書き込む。**後ろの説明書きは削除する**。<br>
 - [x] `bot token`(取得方法は[このサイト](https://dot-blog.jp/news/discord-bot-token/)を参照)<br>
+**!!!注意!!!**<br>
+botの設定をする際に、Intentの項目にチェックをつけること！これがないと一部の機能が使えなくなります。
+<img src="https://github.com/MakeYourOwnDiscordBot/assets/blob/main/IMAGES/intent-settings.png" width=640px>
+
 - [x] `bot prefix`(コマンドの前につけるもの)<br>
 ↓例
 ```
