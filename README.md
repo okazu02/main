@@ -30,6 +30,13 @@ BOT_PREFIX = !
 次にオーナーを設定する<br>`Config`フォルダの中にある`config.js`ファイルを開く
 - [ ] `name` botの名前(実行時のログに表示されるだけで、discord側で表示されることはないのでそのままでも問題ない。)
 - [x] `owners`　botのオーナーのdiscord ID(ここにIDがのっている人はすべての操作を行うことができるので注意!!!!)<br><br>
+↓例
+```javascript
+module.exports= {
+name:"bot"
+owners:["475304856018616340","489690595372171275"]
+}
+```
 画面上部中央にある緑のスタートボタンを押下。<br>必要なパッケージのインストールが自動で始まるので待機。<br>右下(画面サイズや設定によって場所は変わる。)にある黒い画面に`[READY][botの名前]でログイン中`と表示されたら、botが使用できる。<br><br>
 <img src="https://github.com/MakeYourOwnDiscordBot/assets/blob/main/IMAGES/console-screen.png" width="320px">
 
