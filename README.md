@@ -53,6 +53,7 @@ owners:["475304856018616340","489690595372171275"]
 
 ## 6.拡張機能(制作中)
 - [x] [サーバーの情報、ロール情報、ユーザー情報を表示させる拡張機能](https://github.com/MakeYourOwnDiscordBot/Info-Commands)
+- [ ] [evalコマンド(ユーザーにはできないdiscord設定などが行えます。)](https://github.com/MakeYourOwnDiscordBot/Eval-Command)
 - [ ] 編集不要のヘルプコマンド
 - [ ] 音楽再生機能
 - [ ] ログ機能
