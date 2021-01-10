@@ -13,8 +13,8 @@ module.exports = async (message,client) => {
 
   const [, matchedPrefix] = message.content.match(prefixRegex);
 
-  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-  const commandName = args.shift().toLowerCase();
+  const [commandN,...args] = message.content.slice(matchedPrefix.length).split(' ');
+  const commandName = commandN;
 
   const command =
     client.commands.get(commandName) ||
@@ -27,6 +27,7 @@ module.exports = async (message,client) => {
   if(command.ownerOnly) {
     if(!config.owners.includes(message.author.id)) return;
   }
+
 
   if (!cooldowns.has(command.name)) {
     cooldowns.set(command.name, new Collection());
@@ -51,7 +52,7 @@ module.exports = async (message,client) => {
     new MessageEmbed()      
     .setColor("RED")
       .setTitle("COOLDOWN")
-      .setDescription(`\`${command.name}\`コマンドの連続使用`)
+      .setDescription(`\`${command.name}\`コマンドの連投`)
       .addField("コマンド使用者:",`${message.author.tag}`)
       .addField("コマンド使用場所:",`${message.channel}`)
       .setTimestamp()).catch(console.error);
