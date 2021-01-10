@@ -22,18 +22,14 @@ repl.itでコードの読み込みが完了したら、設定に移る。<br>
 `.env`ファイルを開き、以下のものを書き込む。**後ろの説明書きは削除する**。<br>
 - [x] `bot token`(取得方法は[このサイト](https://dot-blog.jp/news/discord-bot-token/)を参照)<br>
 - [x] `bot prefix`(コマンドの前につけるもの)<br>
-- [x] `owner id`(botの全権限を持つ人のID)(2人以上の場合は`,`で区切る)<br>
 ↓例
 ```
 BOT_TOKEN = NSanjainwaoBotTOkenExamplean4122njasjn
 BOT_PREFIX = !
-OWNERS_ID = 10356137471,75364526747247
 ```
-次にオプションを設定する<br>`structures`フォルダの中にある`clientConfig.js`ファイルを開く
-- [ ] `cooldown` コマンドを一度使ってからもう一度使える用になるまでの時間を設定する。単位はミリ秒。デフォルトは3000ミリ秒(3秒)
-- [ ] `allowMention`　`true`の場合、先ほど設定した`BOT_PREFIX`の代わりに、botをメンションしてもコマンドを使えるようにする。(つまり`@bot help`でも`!help`でも動く)  メンションコマンドを使えないようにする場合は`false`に設定
-- [ ] `handleEdits`　`true`の場合、一度間違えて打ったコマンドを編集して正しいコマンドにした場合にbotが反応する。反応しないようにする場合は`false`に設定。
-## 4.botを起動する。
+次にオーナーを設定する<br>`Config`フォルダの中にある`config.js`ファイルを開く
+- [ ] `name` botの名前(実行時のログに表示されるだけで、discord側で表示されることはないのでそのままでも問題ない。)
+- [ ] `owners`　botのオーナーのdiscord ID(ここにIDがのっている人はすべての操作を行うことができるので注意!!!!)
 画面上部中央にある緑のスタートボタンを押下。<br>必要なパッケージのインストールが自動で始まるので待機。<br>右下(画面サイズや設定によって場所は変わる。)にある黒い画面に`[READY][botの名前]でログイン中`と表示されたら、botが使用できる。<br>
 ![起動画面](https://github.com/MakeYourOwnDiscordBot/assets/blob/main/main/IMAGES/console-screen.png)
 <br><br>`!ping`と送信してみよう(`!`の部分は先ほど設定した`BOT_PREFIX`に置き換え)
@@ -43,5 +39,6 @@ OWNERS_ID = 10356137471,75364526747247
 
 ## 6.拡張機能(制作中)
 - [x] [サーバーの情報、ロール情報、ユーザー情報を表示させる拡張機能](https://github.com/MakeYourOwnDiscordBot/Info-Commands)
+- [ ] 編集不要のヘルプコマンド
 - [ ] 音楽再生機能
 - [ ] ログ機能
