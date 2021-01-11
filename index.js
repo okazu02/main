@@ -9,6 +9,8 @@ require('dotenv').config();
 const config = require('./Config/config')
 const leeks = require('leeks.js');
 const Logger = require('leekslazylogger');
+const Database = require("@replit/database")
+const db = new Database()
 const log = new Logger({
 	name: config.name,
 	
